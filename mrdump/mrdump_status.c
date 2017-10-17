@@ -12,8 +12,8 @@
 #define MRDUMP_VERSION_FILE "/sys/module/mrdump/version"
 
 static const char *expdb_devs[] = {
-    "/dev/block/platform/mtk-msdc.0/11230000.msdc0/by-name/expdb",
-    "/dev/block/platform/mtk-msdc.0/11230000.MSDC0/by-name/expdb",
+    "/dev/block/platform/mtk-msdc.0/11120000.msdc0/by-name/expdb",
+    "/dev/block/platform/mtk-msdc.0/11120000.MSDC0/by-name/expdb",
     NULL
 };
 

@@ -31,7 +31,6 @@ import android.provider.Settings;
 import android.provider.Settings.Global;
 
 import android.telephony.Rlog;
-import android.telephony.SignalStrength;
 import android.telephony.TelephonyManager;
 
 import com.android.internal.telephony.MtkEccList;
@@ -58,8 +57,6 @@ public class MT6580 extends RIL implements CommandsInterface {
     private static final int RIL_REQUEST_SET_ECC_LIST = 2089;
 
     private int[] dataCallCids = { -1, -1, -1, -1, -1 };
-
-    private final boolean DBG = false;
 
     //private Context mContext;
     private TelephonyManager mTelephonyManager;
@@ -508,45 +505,5 @@ public class MT6580 extends RIL implements CommandsInterface {
             p3 = 15;
         }
         super.iccIOForApp(command, fileid, path, p1, p2, p3, data, pin2, aid, result);
-    }
-
-    @Override
-    protected Object
-    responseSignalStrength(Parcel p) {
-        int gsmSignalStrength = p.readInt();
-        int gsmBitErrorRate = p.readInt();
-        int wcdmaRscp = p.readInt();
-        int wcdmaEcio = p.readInt();
-        int cdmaDbm = p.readInt();
-        int cdmaEcio = p.readInt();
-        int evdoDbm = p.readInt();
-        int evdoEcio = p.readInt();
-        int evdoSnr = p.readInt();
-        int lteSignalStrength = p.readInt();
-        int lteRsrp = p.readInt();
-        int lteRsrq = p.readInt();
-        int lteRssnr = p.readInt();
-        int lteCqi = p.readInt();
-
-        if (gsmSignalStrength != -1) {
-            if (DBG) {
-                Rlog.i(RILJ_LOG_TAG, "MT6580: original gsmSignalStrength: " + gsmSignalStrength);
-            }
-            gsmSignalStrength = -(gsmSignalStrength - 113) / 2;
-        }
-
-        SignalStrength ss = new SignalStrength(
-                        wcdmaRscp <= 0 ? gsmSignalStrength : wcdmaRscp,
-                        gsmBitErrorRate,
-                        cdmaDbm, cdmaEcio,
-                        evdoDbm, evdoEcio, evdoSnr,
-                        lteSignalStrength, lteRsrp, lteRsrq, lteRssnr, lteCqi,
-                        wcdmaRscp, true);
-
-        if (DBG) {
-            Rlog.i(RILJ_LOG_TAG, "MT6580: " + ss.toString() + " " + gsmSignalStrength);
-        }
-
-        return ss;
     }
 }

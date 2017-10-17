@@ -49,6 +49,11 @@ ro.mtk_perfservice_support=1
 
 persist.logd.logpersistd=logcatd
 
+
+ro.telephony.ril_class=MT6580
+ro.kernel.android.checkjni=0
+ro.telephony.ril.config=signalstrength
+
 ro.telephony.default_network=9
 
 # ClearMotion
