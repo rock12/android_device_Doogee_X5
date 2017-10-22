@@ -124,7 +124,7 @@ BOARD_SEPOLICY_DIRS := \
 POLICYVERS := 29
 
 # Seccomp filter
-BOARD_SECCOMP_POLICY += device/moto/e4/seccomp
+BOARD_SECCOMP_POLICY += device/Doogee/X5/seccomp
 
 BLOCK_BASED_OTA := false
 TARGET_LDPRELOAD += libxlog.so:libmtk_symbols.so:libmtk_shyms.so
