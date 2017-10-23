@@ -2,6 +2,7 @@
 -include vendor/Doogee/X5/BoardConfigVendor.mk
 
 TARGET_SPECIFIC_HEADER_PATH := device/Doogee/X5/include
+TARGET_SYSTEM_PROP += device/Doogee/X5/system.prop
 
 # Platform
 TARGET_BOARD_PLATFORM := mt6580
