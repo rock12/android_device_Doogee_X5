@@ -1,2 +1,2 @@
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/rr_X5.mk
+    $(LOCAL_DIR)/cm_X5.mk
