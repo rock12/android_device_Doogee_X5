@@ -24,7 +24,6 @@ LOCAL_MODULE_TAGS := optional
 
 LOCAL_CLANG := true
 LOCAL_CPPFLAGS := -std=c++1y 
-# LOCAL_SANITIZE := integer
 LOCAL_CPPFLAGS += -Wno-exit-time-destructors
 LOCAL_CPPFLAGS += -Wno-global-constructors
 LOCAL_CPPFLAGS += -Wno-c++98-compat-pedantic

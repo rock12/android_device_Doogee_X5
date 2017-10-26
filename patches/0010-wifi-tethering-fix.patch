@@ -33,11 +33,11 @@ index 1c59ec3..2e6d05c 100755
 +++ b/server/SoftapController.cpp
 @@ -54,7 +54,8 @@ using android::base::WriteStringToFile;
  #endif
- 
- #ifdef LIBWPA_CLIENT_EXISTS
+
 -std:: string hostapd_unix_file(StringPrintf("/data/misc/wifi/hostapd/wlan0"));
 +//std:: string hostapd_unix_file(StringPrintf("/data/misc/wifi/hostapd/wlan0"));
 +  std:: string hostapd_unix_file(StringPrintf("/data/misc/wifi/hostapd/ap0"));
+ #ifdef LIBWPA_CLIENT_EXISTS
  static const char HOSTAPD_DHCP_DIR[]    = "/data/misc/dhcp";
  #endif
  static const char HOSTAPD_CONF_FILE[]    = "/data/misc/wifi/hostapd.conf";
