@@ -1,9 +1,8 @@
-From 08e35e48d6695801392af7233e8e79e2c4b52c98 Mon Sep 17 00:00:00 2001
-From: DeckerSU <support@decker.su>
-Date: Sat, 18 Feb 2017 16:03:25 +0300
-Subject: [PATCH] Revert back to policy version 29
+From bc8d2ed2f226f51119f9f55c8a9200ef9f2e83b1 Mon Sep 17 00:00:00 2001
+From: SeriniTY320 <SeriniTY320@gmail.com>
+Date: Sat, 28 Oct 2017 12:39:50 +0000
+Subject: [PATCH] sepolicy revert to 29v
 
-Change-Id: I96e54983d6f837e1ceee61373520e57ddff6430e
 ---
  app.te            | 4 ++--
  domain.te         | 2 +-
@@ -16,7 +15,7 @@ Change-Id: I96e54983d6f837e1ceee61373520e57ddff6430e
  8 files changed, 15 insertions(+), 15 deletions(-)
 
 diff --git a/app.te b/app.te
-index 19a7dac..207495f 100644
+index 93fe3a4..5fa3c35 100644
 --- a/app.te
 +++ b/app.te
 @@ -244,8 +244,8 @@ use_keystore({ appdomain -isolated_app })
@@ -25,13 +24,13 @@ index 19a7dac..207495f 100644
  # only allow unprivileged socket ioctl commands
 -allowxperm { appdomain -bluetooth } self:{ rawip_socket tcp_socket udp_socket }
 -  ioctl { unpriv_sock_ioctls unpriv_tty_ioctls };
-+# allowxperm { appdomain -bluetooth } self:{ rawip_socket tcp_socket udp_socket }
++#allowxperm { appdomain -bluetooth } self:{ rawip_socket tcp_socket udp_socket }
 +#  ioctl { unpriv_sock_ioctls unpriv_tty_ioctls };
  
  allow { appdomain -isolated_app } ion_device:chr_file rw_file_perms;
  
 diff --git a/domain.te b/domain.te
-index a74833c..4ceedf7 100644
+index cc4cdd2..0127da7 100644
 --- a/domain.te
 +++ b/domain.te
 @@ -28,7 +28,7 @@ r_dir_file(domain, self)
@@ -80,10 +79,10 @@ index d9368ad..3ef8830 100644
 -neverallowxperm mediadrmserver domain:{ rawip_socket tcp_socket udp_socket } ioctl priv_sock_ioctls;
 +#neverallowxperm mediadrmserver domain:{ rawip_socket tcp_socket udp_socket } ioctl priv_sock_ioctls;
 diff --git a/mediaserver.te b/mediaserver.te
-index dc05e14..519b87f 100644
+index b8ded82..3ef3bb8 100644
 --- a/mediaserver.te
 +++ b/mediaserver.te
-@@ -117,8 +117,8 @@ allow mediaserver drmserver:drmservice {
+@@ -120,8 +120,8 @@ allow mediaserver drmserver:drmservice {
  };
  
  # only allow unprivileged socket ioctl commands
@@ -94,12 +93,15 @@ index dc05e14..519b87f 100644
  
  # Access to /data/media.
  # This should be removed if sdcardfs is modified to alter the secontext for its
-@@ -138,4 +138,4 @@ allow mediaserver preloads_data_file:file { getattr read ioctl };
+@@ -141,7 +141,7 @@ allow mediaserver preloads_data_file:file { getattr read ioctl };
  neverallow mediaserver { file_type fs_type }:file execute_no_trans;
  
  # do not allow privileged socket ioctl commands
 -neverallowxperm mediaserver domain:{ rawip_socket tcp_socket udp_socket } ioctl priv_sock_ioctls;
 +#neverallowxperm mediaserver domain:{ rawip_socket tcp_socket udp_socket } ioctl priv_sock_ioctls;
+ 
+ # Themed resources (i.e. composed icons)
+ allow mediaserver theme_data_file:dir r_dir_perms;
 diff --git a/priv_app.te b/priv_app.te
 index 85516a6..aab4b20 100644
 --- a/priv_app.te
@@ -124,10 +126,10 @@ index 3e95b46..7ed52cb 100644
 -neverallowxperm shell domain:{ rawip_socket tcp_socket udp_socket } ioctl priv_sock_ioctls;
 +#neverallowxperm shell domain:{ rawip_socket tcp_socket udp_socket } ioctl priv_sock_ioctls;
 diff --git a/untrusted_app.te b/untrusted_app.te
-index b9a72ed..3a1d839 100644
+index 8dd0f3f..1588102 100644
 --- a/untrusted_app.te
 +++ b/untrusted_app.te
-@@ -158,8 +158,8 @@ neverallow untrusted_app sysfs_mac_address:file no_rw_file_perms;
+@@ -161,8 +161,8 @@ neverallow untrusted_app sysfs_mac_address:file no_rw_file_perms;
  
  # Restrict socket ioctls. Either 1. disallow privileged ioctls, 2. disallow the
  # ioctl permission, or 3. disallow the socket class.

@@ -1,0 +1,1 @@
+extern "C" void _ZN7android12AudioPCMxWay4stopEv() {}
