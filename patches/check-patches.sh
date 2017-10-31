@@ -8,7 +8,7 @@ cd bionic
 git apply -v --check ../device/Doogee/X5/patches/0002-Apply-LIBC-version-to-__pthread_gettid.patch
 cd ..
 cd system/sepolicy
-git apply -v --check ../../device/Doogee/X5/patches/0003-Revert-back-to-policy-version-29.patch
+git apply -v --check ../../device/Doogee/X5/patches/0001-system_sepolicy.patch
 cd ../..
 cd frameworks/av
 git apply -v --check ../../device/Doogee/X5/patches/0001-mtk-audio-fix.patch

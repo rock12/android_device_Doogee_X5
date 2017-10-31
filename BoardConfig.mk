@@ -85,7 +85,10 @@ BOARD_BLUETOOTH_DOES_NOT_USE_RFKILL := true
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/Doogee/X5/bluetooth
 
 # Offline charging
+BOARD_CHARGING_MODE_BOOTING_LPM := /sys/class/BOOT/BOOT/boot/boot_mode
 BACKLIGHT_PATH := /sys/class/leds/lcd-backlight/brightness
+BOARD_CHARGER_ENABLE_SUSPEND := true
+BOARD_CHARGER_SHOW_PERCENTAGE := true
 
 # Sensors
 TARGET_NO_SENSOR_PERMISSION_CHECK := true
