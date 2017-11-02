@@ -18,4 +18,7 @@ allow nvram_daemon proinfo_device:blk_file rw_file_perms;
 allow nvram_daemon nvram_prop:property_service set;
 allow nvram_daemon wmt_prop:property_service set;
 
+allow nvram_daemon sysfs:file open;
+allow nvram_daemon sysfs:file read;
+
 #unix_socket_connect(nvram_daemon, property, init)

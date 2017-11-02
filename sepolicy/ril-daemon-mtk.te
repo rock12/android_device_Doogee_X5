@@ -18,4 +18,8 @@ allow ril-daemon-mtk radio_prop:property_service set;
 allow ril-daemon-mtk ctl_muxreport-daemon_prop:property_service set;
 allow ril-daemon-mtk ril_mux_report_case_prop:property_service set;
 
+allow ril-daemon-mtk block_device:blk_file open;
+allow ril-daemon-mtk block_device:blk_file read;
+allow ril-daemon-mtk block_device:blk_file write;
+
 #unix_socket_connect(ril-daemon-mtk, property, init)
