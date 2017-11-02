@@ -78,7 +78,6 @@ PRODUCT_COPY_FILES += \
 # GPS
 PRODUCT_COPY_FILES += \
      $(LOCAL_PATH)/configs/agps_profiles_conf2.xml:system/etc/agps_profiles_conf2.xml
-	 PRODUCT_PACKAGES += gps.mt6580
 
 # Keylayout
 PRODUCT_COPY_FILES += \
@@ -145,6 +144,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libmrdump \
     mrdump_tool
+
+##GPS
+PRODUCT_PACKAGES += \
+	gps.mt6580
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 PRODUCT_NAME := full_X5
