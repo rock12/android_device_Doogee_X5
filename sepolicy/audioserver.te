@@ -1,3 +1,2 @@
-allow audioserver nvram_device:blk_file open;
-allow audioserver nvram_device:blk_file read;
-allow audioserver nvram_device:blk_file write;
+allow audioserver nvram_device:blk_file { open read write };
+

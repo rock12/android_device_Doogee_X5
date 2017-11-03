@@ -1,3 +1,1 @@
-allow rild nvram_prop:file getattr;
-allow rild nvram_prop:file open;
-allow rild nvram_prop:file read;
+allow rild nvram_prop:file { getattr open read };

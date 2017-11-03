@@ -1,2 +1,1 @@
-allow untrusted_app sysfs:file open;
-allow untrusted_app sysfs:file read;
+allow untrusted_app sysfs:file { open read };

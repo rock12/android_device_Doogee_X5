@@ -1,7 +1,2 @@
-allow cameraserver device:chr_file ioctl;
-allow cameraserver device:chr_file open;
-allow cameraserver device:chr_file read;
-allow cameraserver nvram_device:blk_file open;
-allow cameraserver nvram_device:blk_file read;
-allow cameraserver nvram_device:blk_file write;
+allow cameraserver nvram_device:blk_file { open read write };
 allow cameraserver sensorservice_service:service_manager find;
