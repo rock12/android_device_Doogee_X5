@@ -59,6 +59,7 @@ TARGET_REQUIRES_SYNCHRONOUS_SETSURFACE := true
 
 # MTK Hardware
 BOARD_HAS_MTK_HARDWARE := true
+BOARD_USES_MTK_HARDWARE := true
 MTK_HARDWARE := true
 
 # RIL 
@@ -121,9 +122,6 @@ BOARD_SEPOLICY_DIRS := \
 
 # Use old sepolicy version
 POLICYVERS := 29
-
-# Seccomp filter
-BOARD_SECCOMP_POLICY += device/Doogee/X5/seccomp
 
 BLOCK_BASED_OTA := false
 TARGET_LDPRELOAD += libxlog.so:libmtk_symbols.so
