@@ -12,7 +12,7 @@ cd system/sepolicy
 git apply -v ../../device/Doogee/X5/patches/0001-system_sepolicy.patch
 cd ../..
 cd frameworks/av
-git apply -v ../../device/Doogee/X5/patches/frameworks_av.patch
+git apply -v ../../device/Doogee/X5/patches/0001-frameworks_av.patch
 cd ../..
 cd frameworks/native
 git apply -v ../../device/Doogee/X5/patches/frameworks_native.patch
